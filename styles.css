@@ -212,14 +212,17 @@ main {
   padding:10px
 }
 
-.item {
+.sale {
   width: 255px;
   height: 260px;
   margin:9px;
   position:relative;
+  background-color: white;
+  overflow: auto;
 }
 
 main img {
-  width:262px;
-  height: 208px;
+  width:255px;
+  height: 200px;
 }
+

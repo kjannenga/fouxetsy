@@ -1,15 +1,12 @@
 $(document).ready(function(){
    $.getJSON('https://api.etsy.com/v2/listings/active.js?api_key=h9oq2yf3twf4ziejn10b717i&keywords=whiskey&includes=Images,Shop&callback=?', function(formData){
-   	console.log(formData)
-   	var results = ''
    	
-   		$(".searchbutton").on('click', function (){
+   	var results = ''
+   
+   		formData.results.forEach(function (sale){
    			
-   		})
-   		formData.results.forEach(function (item){
-   			console.log(item);
 
-	   			results += `<div class="item"><a href="${item.url}"> <img src="${item.Images[0].url_570xN}"/><div class="info">${item.title}<br />${item.shop_name} <span>${item.price}</span></a></div></div>`
+	   			results += `<div class="sale"> <a href="${sale.url}"> <img src="${sale.Images.url_570xN}"/><div class="info">${sale.title}<br />${sale.Shop.shop_name} ${sale.price}</a></div></div>`
 
    		})
    		$('main').html(results)
